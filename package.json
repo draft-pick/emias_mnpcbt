@@ -1,0 +1,62 @@
+{
+    "name": "frontend",
+    "private": true,
+    "version": "0.0.1",
+    "description": "EMIAS-MNPCBT десктоп-приложение",
+    "author": "draftpick",
+    "type": "module",
+    "main": "electron/main.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "electron": "electron ./electron/main.js",
+        "start": "concurrently \"vite\" \"npm run electron\"",
+        "build:app": "vite build && electron-builder"
+    },
+    "dependencies": {
+        "antd": "^5.24.3",
+        "axios": "^1.8.2",
+        "dayjs": "^1.11.13",
+        "electron-updater": "^6.6.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-icons": "^5.5.0",
+        "react-input-mask": "^2.0.4",
+        "react-router-dom": "^7.3.0",
+        "recharts": "^2.15.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.21.0",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "concurrently": "^8.2.2",
+        "electron": "^28.2.5",
+        "electron-builder": "^24.6.0",
+        "eslint": "^9.21.0",
+        "eslint-plugin-react-hooks": "^5.1.0",
+        "eslint-plugin-react-refresh": "^0.4.19",
+        "globals": "^15.15.0",
+        "vite": "^6.2.0"
+    },
+    "build": {
+        "appId": "com.emias_mnpcbt.desktop",
+        "productName": "EMIAS-MNPCBT",
+        "files": [
+            "dist/**/*",
+            "electron/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        },
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "draftpick",
+                "repo": "emias_mnpcbt"
+            }
+        ]
+    }
+}

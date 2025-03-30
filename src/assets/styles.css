@@ -1,0 +1,88 @@
+@import url("./fonts.css");
+
+
+body {
+    font-family: "Akt", sans-serif;
+    background-color: var(--sider-background);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--placeholder-color) !important;
+    font-weight: 100;
+}
+
+svg {
+    color: var(--text-color);
+}
+
+.ant-form-item {
+    margin-bottom: 15px;
+}
+
+.ant-menu-item svg {
+    color: var(--text-color) !important;
+}
+
+.outline-button svg {
+    color: var(--primary-color);
+}
+
+.ant-layout {
+    background: var(--sider-background);
+}
+
+.ant-menu-item-selected {
+    background-color: var(--primary-color) !important;
+    color: var(--text-secondary-color) !important;
+}
+
+.ant-menu-item-selected svg {
+    color: var(--text-secondary-color);
+}
+
+.ant-menu-item:hover {
+    background-color: var(--primary-color) !important;
+    border-radius: 8px;
+}
+
+.ant-menu-light.ant-menu-root.ant-menu-inline {
+    border-inline-end: none;
+}
+
+.custom-checkbox {
+    color: var(--text-color);
+    font-size: 12px;
+    line-height: 1;
+}
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: var(--secondary-color) !important; /* Фон */
+    border-color: var(--secondary-color) !important; /* Граница */
+  }
+  
+  /* Тень при фокусе (когда чекбокс в фокусе клавиатурой) */
+  .custom-checkbox .ant-checkbox-checked::after {
+    border-color: var(--secondary-color) !important;
+  }
+  
+  /* Стили при наведении */
+  .custom-checkbox:hover .ant-checkbox-inner {
+    border-color: var(--secondary-hover) !important; /* Цвет границы при наведении */
+  }
+  
+  /* Стили при наведении на активный (отмеченный) чекбокс */
+  .custom-checkbox:hover .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: var(--secondary-hover) !important; /* Светлее при наведении */
+    border-color: var(--secondary-hover) !important;
+  }

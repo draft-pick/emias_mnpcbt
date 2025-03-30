@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Akt";
+    src: url("./fonts/Akt-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Akt";
+    src: url("./fonts/Akt-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akt";
+    src: url("./fonts/Akt-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akt";
+    src: url("./fonts/Akt-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akt";
+    src: url("./fonts/Akt-Solid.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+}

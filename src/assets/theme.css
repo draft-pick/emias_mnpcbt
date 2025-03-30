@@ -1,0 +1,39 @@
+:root {
+    /* Светлая тема */
+    --primary-color: #6269EE;
+    --primary-hover: #8F92D3;
+    --secondary-color: #DB3F3F;
+    --secondary-hover: #C44F4F;
+    --primary-border: #D9D9D9;
+    --background-color: #ffffff;
+    --text-color: #1E2128;
+    --text-secondary-color: #fff;
+    --placeholder-color: #555;
+    --card-background: #fff;
+    --sider-background: #E8E8E8;
+    --sider-border: #e0e0e0;
+    --sider-content: #fff;
+    --outline-color: #D9D9D9;
+    --outline-hover: #b0b0b0;
+    --outline-hover-bg: rgba(98, 105, 238, .3);
+}
+
+[data-theme="dark"] {
+    /* Тёмная тема */
+    --primary-color: #8F92D3;
+    --primary-hover: #6269EE;
+    --secondary-color: #C44F4F;
+    --secondary-hover: #DB3F3F;
+    --primary-border: #828282;
+    --background-color: #141414;
+    --text-color: #A3AECA;
+    --text-secondary-color: #E5E7EB;
+    --placeholder-color: #828282;
+    --card-background: #1f1f1f;
+    --sider-background: #1E2128;
+    --sider-border: #686868;
+    --sider-content: #43464F;
+    --outline-color: #828282;
+    --outline-hover: #696969;
+    --outline-hover-bg: rgba(143, 146, 211, .3);
+}
