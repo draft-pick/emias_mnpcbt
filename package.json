@@ -1,7 +1,7 @@
 {
     "name": "frontend",
     "private": true,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "EMIAS-MNPCBT десктоп-приложение",
     "author": "draftpick",
     "type": "module",
@@ -51,10 +51,29 @@
         "directories": {
             "buildResources": "assets"
         },
+        "mac": {
+            "icon": "assets/images/logo-desktop.icns",
+            "target": [
+                "dmg",
+                "zip"
+            ],
+            "identity": null
+        },
+        "win": {
+            "icon": "assets/images/logo-desktop.ico",
+            "target": [
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": true
+        },
         "publish": [
             {
                 "provider": "github",
-                "owner": "draftpick",
+                "owner": "draft-pick",
                 "repo": "emias_mnpcbt"
             }
         ]
