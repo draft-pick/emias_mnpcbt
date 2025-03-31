@@ -45,7 +45,8 @@
         "productName": "EMIAS-MNPCBT",
         "files": [
             "dist/**/*",
-            "electron/**/*"
+            "electron/**/*",
+            "preload.js"
         ],
         "directories": {
             "buildResources": "assets"

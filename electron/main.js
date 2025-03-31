@@ -14,7 +14,8 @@ function createWindow() {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,          // 👈 добавляем
-            contextIsolation: false         // 👈 и это
+            contextIsolation: false,         // 👈 и это
+            webSecurity: false, // 👈 добавляем ЭТО
         },
     });
 
@@ -25,7 +26,7 @@ function createWindow() {
     } else {
         const filePath = path.join(__dirname, '../dist/index.html');
         console.log('📂 Загрузка файла:', filePath);
-        win.loadFile(filePath);
+        win.loadURL(`file://${filePath}`);
     }
 }
 
