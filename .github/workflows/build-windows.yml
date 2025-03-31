@@ -3,25 +3,33 @@ name: Build Windows App
 on:
   push:
     tags:
-      - 'v*'
+      - v*
 
 jobs:
   build:
     runs-on: windows-latest
 
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build and Publish
+      - name: Debug GitHub auth
+        run: |
+          echo "$GH_TOKEN" | gh auth login --with-token
+          gh auth status
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and publish Windows app
         run: npm run build:app -- --win --x64 --publish always

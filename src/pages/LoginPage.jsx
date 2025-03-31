@@ -61,6 +61,7 @@ export default function LoginPage() {
                 <div style={{ marginTop: '20px' }}>
                     <ApiSwitcher />
                 </div>
+                <div style={{ marginTop: '10px', textAlign: 'end', fontWeight: '100', fontSize: '10px'}}>Version: 0.0.5</div>
             </CustomCard>
         </div>
     );
