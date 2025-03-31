@@ -1,10 +1,9 @@
 {
     "name": "frontend",
     "private": true,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "EMIAS-MNPCBT десктоп-приложение",
     "author": "draftpick",
-    "type": "module",
     "main": "electron/main.js",
     "scripts": {
         "dev": "vite",
