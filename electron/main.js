@@ -1,16 +1,16 @@
-import { app, BrowserWindow } from 'electron';
-import { autoUpdater } from 'electron-updater';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const { app, BrowserWindow, dialog } = require('electron');
+const path = require('path');
+const { autoUpdater } = require('electron-updater');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const isDev = !app.isPackaged;
 
+let win;
+
 function createWindow() {
-  const win = new BrowserWindow({
-    width: 1280,
+  win = new BrowserWindow({
+    width: 1200,
     height: 800,
+    icon: path.join(__dirname, '../assets/images/logo-desktop.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -21,10 +21,34 @@ function createWindow() {
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'));
   }
-
-  if (!isDev) {
-    autoUpdater.checkForUpdatesAndNotify();
-  }
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+
+  if (!isDev) {
+    autoUpdater.checkForUpdates();
+
+    autoUpdater.on('update-available', () => {
+      console.log('🔄 Обновление доступно');
+    });
+
+    autoUpdater.on('update-downloaded', () => {
+      console.log('✅ Обновление загружено — перезапуск...');
+      dialog
+        .showMessageBox(win, {
+          type: 'info',
+          title: 'Обновление',
+          message: 'Доступна новая версия. Приложение будет перезапущено.',
+          buttons: ['ОК'],
+        })
+        .then(() => {
+          autoUpdater.quitAndInstall();
+        });
+    });
+
+    autoUpdater.on('error', (err) => {
+      console.error('❌ Ошибка при обновлении:', err);
+    });
+  }
+});
